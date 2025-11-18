@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+  
+  <display-name>MVC Sample Application</display-name>
+  
+  <!-- Front Controller Servlet -->
+  <servlet>
+    <servlet-name>FrontServlet</servlet-name>
+    <servlet-class>com.example.controller.FrontServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>FrontServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Dashboard Servlet -->
+  <servlet>
+    <servlet-name>DashboardServlet</servlet-name>
+    <servlet-class>com.example.controller.DashboardServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>DashboardServlet</servlet-name>
+    <url-pattern>/dashboard</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Room Servlet -->
+  <servlet>
+    <servlet-name>RoomServlet</servlet-name>
+    <servlet-class>com.example.controller.RoomServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>RoomServlet</servlet-name>
+    <url-pattern>/rooms</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Customer Servlet -->
+  <servlet>
+    <servlet-name>CustomerServlet</servlet-name>
+    <servlet-class>com.example.controller.CustomerServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>CustomerServlet</servlet-name>
+    <url-pattern>/customers</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Booking Servlet -->
+  <servlet>
+    <servlet-name>BookingServlet</servlet-name>
+    <servlet-class>com.example.controller.BookingServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>BookingServlet</servlet-name>
+    <url-pattern>/bookings</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Welcome File List -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Session Configuration -->
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  
+</web-app>

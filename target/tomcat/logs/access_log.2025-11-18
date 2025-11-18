@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [18/Nov/2025:22:53:29 +0700] "GET /myapp/auth?action=login HTTP/1.1" 200 210 http-bio-8080-exec-1 234
+0:0:0:0:0:0:0:1 - - [18/Nov/2025:22:53:29 +0700] "GET /myapp/dashboard HTTP/1.1" 200 6917 http-bio-8080-exec-3 170
+0:0:0:0:0:0:0:1 - - [18/Nov/2025:22:53:34 +0700] "GET /myapp/auth?action=login HTTP/1.1" 200 210 http-bio-8080-exec-4 3
+0:0:0:0:0:0:0:1 - - [18/Nov/2025:22:53:35 +0700] "GET /myapp/dashboard HTTP/1.1" 200 6917 http-bio-8080-exec-5 6

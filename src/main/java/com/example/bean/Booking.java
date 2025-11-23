@@ -17,6 +17,7 @@ public class Booking {
     // For display purposes
     private String customerName;
     private String roomNumber;
+    private Room room;
     
     public Booking() {
     }
@@ -131,6 +132,14 @@ public class Booking {
     
     public void setRoomNumber(String roomNumber) {
         this.roomNumber = roomNumber;
+    }
+    
+    public Room getRoom() {
+        return room;
+    }
+    
+    public void setRoom(Room room) {
+        this.room = room;
     }
     
     @Override

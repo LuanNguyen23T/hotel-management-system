@@ -1,16 +1,30 @@
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/util/DatabaseConnection.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/bo/CustomerBO.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/model/RoomDAO.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/bo/RoomBO.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/model/BookingDAO.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/controller/RoomServlet.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/controller/BookingServlet.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/bean/Customer.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/bean/Booking.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/model/CustomerDAO.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/controller/FrontServlet.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/util/DatabaseConfig.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/bo/BookingBO.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/controller/DashboardServlet.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/controller/CustomerServlet.java
-/Users/bnhan2710/Documents/source-code/CNW/myapp/src/main/java/com/example/bean/Room.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/AdminCustomerServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/util/DatabaseConfig.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/AdminBookingServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/model/CustomerDAO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/CustomerServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/customer/CustomerDashboardServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/model/RoomDAO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/customer/CustomerBookingServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/BookingServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/AdminRoomServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bo/UserBO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/util/DatabaseConnection.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/AuthServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/model/UserDAO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bean/Booking.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bo/BookingBO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bean/Role.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/filter/AuthFilter.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bo/CustomerBO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/DashboardServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/util/AuthFilter.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bean/User.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bo/RoomBO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/AdminDashboardServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/admin/RoomServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/LoginServlet.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bean/Room.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/model/BookingDAO.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/bean/Customer.java
+/Users/nguyenhuuhoangluan/Git Code/hotel-management-system/src/main/java/com/example/controller/FrontServlet.java

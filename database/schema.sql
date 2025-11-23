@@ -27,6 +27,8 @@ CREATE TABLE rooms (
 -- Create customers table
 CREATE TABLE customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE,
+    password VARCHAR(255),
     full_name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     phone VARCHAR(20),
@@ -35,6 +37,7 @@ CREATE TABLE customers (
     nationality VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX idx_username (username),
     INDEX idx_email (email),
     INDEX idx_id_card (id_card)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -84,11 +87,11 @@ INSERT INTO rooms (room_number, room_type, price_per_night, status, capacity, de
 ('302', 'Suite', 1600000, 'Available', 4, 'Phòng suite sang trọng với view biển'),
 ('401', 'Deluxe', 2000000, 'Maintenance', 2, 'Phòng deluxe cao cấp với đầy đủ tiện nghi');
 
--- Insert sample customers
-INSERT INTO customers (full_name, email, phone, id_card, address, nationality) VALUES
-('Nguyễn Văn An', 'nguyenvanan@gmail.com', '0901234567', '123456789012', '123 Đường ABC, Quận 1, TP.HCM', 'Việt Nam'),
-('Trần Thị Bình', 'tranthibinh@gmail.com', '0912345678', '234567890123', '456 Đường XYZ, Quận 3, TP.HCM', 'Việt Nam'),
-('Lê Minh Cường', 'leminhcuong@gmail.com', '0923456789', '345678901234', '789 Đường DEF, Quận 5, TP.HCM', 'Việt Nam');
+-- Insert sample customers (with username and password for login)
+INSERT INTO customers (username, password, full_name, email, phone, id_card, address, nationality) VALUES
+('customer1', 'customer123', 'Nguyễn Văn An', 'nguyenvanan@gmail.com', '0901234567', '123456789012', '123 Đường ABC, Quận 1, TP.HCM', 'Việt Nam'),
+('customer2', 'customer123', 'Trần Thị Bình', 'tranthibinh@gmail.com', '0912345678', '234567890123', '456 Đường XYZ, Quận 3, TP.HCM', 'Việt Nam'),
+('customer3', 'customer123', 'Lê Minh Cường', 'leminhcuong@gmail.com', '0923456789', '345678901234', '789 Đường DEF, Quận 5, TP.HCM', 'Việt Nam');
 
 -- Insert sample bookings
 INSERT INTO bookings (customer_id, room_id, check_in_date, check_out_date, number_of_guests, total_price, status, special_requests) VALUES

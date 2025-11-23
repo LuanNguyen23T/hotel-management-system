@@ -1,12 +1,12 @@
 package com.example.bo;
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import com.example.bean.Booking;
 import com.example.bean.Room;
 import com.example.model.BookingDAO;
 import com.example.model.RoomDAO;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 public class BookingBO {
     private BookingDAO bookingDAO;
@@ -130,5 +130,9 @@ public class BookingBO {
     
     public double getTotalRevenue() {
         return bookingDAO.getTotalRevenue();
+    }
+    
+    public List<Booking> getBookingsByCustomerId(int customerId) {
+        return bookingDAO.getBookingsByCustomer(customerId);
     }
 }

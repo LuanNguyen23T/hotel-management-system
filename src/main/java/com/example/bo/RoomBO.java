@@ -1,8 +1,9 @@
 package com.example.bo;
 
+import java.util.List;
+
 import com.example.bean.Room;
 import com.example.model.RoomDAO;
-import java.util.List;
 
 public class RoomBO {
     private RoomDAO roomDAO;
@@ -28,6 +29,10 @@ public class RoomBO {
             return roomDAO.getAllRooms();
         }
         return roomDAO.getRoomsByType(type);
+    }
+    
+    public List<Room> getRoomsByFilter(String status, String type) {
+        return roomDAO.getRoomsByFilter(status, type);
     }
     
     public boolean addRoom(Room room) {

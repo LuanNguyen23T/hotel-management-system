@@ -55,11 +55,15 @@ fi
 echo ""
 echo "📊 Creating database and tables..."
 
+# Determine the correct path to schema.sql
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCHEMA_FILE="$SCRIPT_DIR/schema.sql"
+
 # Run schema.sql
 if [ -z "$DB_PASSWORD" ]; then
-    $MYSQL_CMD -u"$DB_USER" < database/schema.sql
+    $MYSQL_CMD -u"$DB_USER" < "$SCHEMA_FILE"
 else
-    $MYSQL_CMD -u"$DB_USER" -p"$DB_PASSWORD" < database/schema.sql
+    $MYSQL_CMD -u"$DB_USER" -p"$DB_PASSWORD" < "$SCHEMA_FILE"
 fi
 
 if [ $? -eq 0 ]; then

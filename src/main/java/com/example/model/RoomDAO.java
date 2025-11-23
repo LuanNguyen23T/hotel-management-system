@@ -1,9 +1,10 @@
 package com.example.model;
 
-import com.example.bean.Room;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import com.example.bean.Room;
 
 public class RoomDAO {
     private static List<Room> rooms = new ArrayList<>();
@@ -53,6 +54,13 @@ public class RoomDAO {
     public List<Room> getRoomsByStatus(String status) {
         return rooms.stream()
                 .filter(r -> r.getStatus().equals(status))
+                .collect(Collectors.toList());
+    }
+    
+    public List<Room> getRoomsByFilter(String status, String type) {
+        return rooms.stream()
+                .filter(r -> (status == null || status.isEmpty() || r.getStatus().equals(status)))
+                .filter(r -> (type == null || type.isEmpty() || r.getRoomType().equals(type)))
                 .collect(Collectors.toList());
     }
     

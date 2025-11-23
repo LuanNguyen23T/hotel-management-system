@@ -1,8 +1,9 @@
 package com.example.bo;
 
+import java.util.List;
+
 import com.example.bean.Customer;
 import com.example.model.CustomerDAO;
-import java.util.List;
 
 public class CustomerBO {
     private CustomerDAO customerDAO;
@@ -90,5 +91,46 @@ public class CustomerBO {
     
     public int getTotalCustomers() {
         return customerDAO.getTotalCustomers();
+    }
+    
+    public Customer loginCustomer(String username, String password) {
+        if (username == null || username.trim().isEmpty() || 
+            password == null || password.trim().isEmpty()) {
+            return null;
+        }
+        return customerDAO.validateCustomerLogin(username, password);
+    }
+    
+    public boolean registerCustomer(Customer customer) {
+        // Validate basic customer info
+        if (!validateCustomer(customer)) {
+            return false;
+        }
+        
+        // Validate username and password
+        if (customer.getUsername() == null || customer.getUsername().trim().isEmpty()) {
+            return false;
+        }
+        
+        if (customer.getPassword() == null || customer.getPassword().length() < 6) {
+            return false;
+        }
+        
+        // Check duplicate username
+        if (customerDAO.getCustomerByUsername(customer.getUsername()) != null) {
+            return false;
+        }
+        
+        // Check duplicate email
+        if (customerDAO.getCustomerByEmail(customer.getEmail()) != null) {
+            return false;
+        }
+        
+        // Check duplicate ID card
+        if (customerDAO.getCustomerByIdCard(customer.getIdCard()) != null) {
+            return false;
+        }
+        
+        return customerDAO.addCustomer(customer);
     }
 }

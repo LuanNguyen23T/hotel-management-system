@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -47,7 +48,8 @@ public class FrontServlet extends HttpServlet {
     
     private void showHome(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+        // Redirect to login page
+        response.sendRedirect(request.getContextPath() + "/auth?action=login");
     }
     
     private void listItems(HttpServletRequest request, HttpServletResponse response) 

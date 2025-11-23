@@ -33,6 +33,8 @@ public class BookingServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         
         String action = request.getParameter("action");
         
@@ -74,12 +76,14 @@ public class BookingServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         
         String action = request.getParameter("action");
         
-        if ("add".equals(action)) {
+        if ("insert".equals(action)) {
             addBooking(request, response);
-        } else if ("edit".equals(action)) {
+        } else if ("update".equals(action)) {
             updateBooking(request, response);
         } else {
             doGet(request, response);
@@ -116,6 +120,9 @@ public class BookingServlet extends HttpServlet {
     
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        Booking booking = new Booking();
+        booking.setId(0);
+        request.setAttribute("booking", booking);
         request.setAttribute("customers", customerBO.getAllCustomers());
         request.setAttribute("rooms", roomBO.getAvailableRooms());
         request.getRequestDispatcher("/WEB-INF/views/admin/booking-form.jsp").forward(request, response);

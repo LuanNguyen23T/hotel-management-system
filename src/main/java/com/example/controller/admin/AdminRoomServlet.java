@@ -23,6 +23,8 @@ public class AdminRoomServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         
         String action = request.getParameter("action");
         
@@ -55,12 +57,14 @@ public class AdminRoomServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         
         String action = request.getParameter("action");
         
-        if ("add".equals(action)) {
+        if ("insert".equals(action)) {
             addRoom(request, response);
-        } else if ("edit".equals(action)) {
+        } else if ("update".equals(action)) {
             updateRoom(request, response);
         } else {
             doGet(request, response);
@@ -87,6 +91,9 @@ public class AdminRoomServlet extends HttpServlet {
     
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        Room room = new Room();
+        room.setId(0);
+        request.setAttribute("room", room);
         request.getRequestDispatcher("/WEB-INF/views/admin/room-form.jsp").forward(request, response);
     }
     

@@ -67,6 +67,19 @@ public class BookingBO {
             return false;
         }
         
+        // Recalculate total price
+        Room room = roomDAO.getRoomById(booking.getRoomId());
+        if (room != null) {
+            long diffInMillies = booking.getCheckOutDate().getTime() - booking.getCheckInDate().getTime();
+            long numberOfNights = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+            if (numberOfNights <= 0) {
+                numberOfNights = 1;
+            }
+            
+            double totalPrice = room.getPricePerNight() * numberOfNights;
+            booking.setTotalPrice(totalPrice);
+        }
+        
         return bookingDAO.updateBooking(booking);
     }
     

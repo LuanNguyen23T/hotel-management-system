@@ -23,6 +23,8 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         
         String action = request.getParameter("action");
         
@@ -55,12 +57,14 @@ public class CustomerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+        response.setCharacterEncoding("UTF-8");
         
         String action = request.getParameter("action");
         
-        if ("add".equals(action)) {
+        if ("insert".equals(action)) {
             addCustomer(request, response);
-        } else if ("edit".equals(action)) {
+        } else if ("update".equals(action)) {
             updateCustomer(request, response);
         } else {
             doGet(request, response);
@@ -76,6 +80,9 @@ public class CustomerServlet extends HttpServlet {
     
     private void showAddForm(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {
+        Customer customer = new Customer();
+        customer.setId(0);
+        request.setAttribute("customer", customer);
         request.getRequestDispatcher("/WEB-INF/views/admin/customer-form.jsp").forward(request, response);
     }
     

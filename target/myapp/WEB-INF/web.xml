@@ -7,6 +7,21 @@
   
   <display-name>Hotel Management System</display-name>
   
+  <!-- Character Encoding Filter -->
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <filter-class>com.example.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  
+  <filter-mapping>
+    <filter-name>CharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
   <!-- Authentication Filter -->
   <filter>
     <filter-name>AuthFilter</filter-name>

@@ -7,6 +7,7 @@ com/example/bo/RoomBO.class
 com/example/model/UserDAO.class
 com/example/controller/admin/CustomerServlet.class
 com/example/bo/CustomerBO.class
+com/example/controller/admin/BookingServlet.class
 com/example/controller/LoginServlet.class
 com/example/bo/BookingBO.class
 com/example/controller/admin/AdminRoomServlet.class
@@ -23,6 +24,7 @@ com/example/bean/Room.class
 com/example/controller/customer/CustomerDashboardServlet.class
 com/example/controller/AuthServlet.class
 com/example/controller/admin/AdminDashboardServlet.class
+com/example/filter/CharacterEncodingFilter.class
 com/example/model/BookingDAO.class
 com/example/util/AuthFilter.class
 com/example/util/DatabaseConnection.class
